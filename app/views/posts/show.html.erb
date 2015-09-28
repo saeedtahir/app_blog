@@ -1,0 +1,48 @@
+
+<div class="panel panel-primary mtb">
+    <div class="panel-heading">
+        Latest Post
+    </div>
+    <div class="panel-body">
+<h1><%= @post.title  %>
+</h1>
+   
+        <p class="text-success well">submitted <%= time_ago_in_words(@post.created_at)%> Ago
+         <% if user_signed_in? %>
+            | <%= link_to 'Edit', edit_post_path(@post), :class => 'btn btn-primary btn-xs' %> 
+            | <%= link_to 'Delete', post_path(@post),method: :delete, data: {confirm: 'Are you sure?'}%>
+            <%end%>
+        </p>
+   
+
+
+<%= image_tag @post.image, :class => 'img-responsive' if @post.image?%>
+
+	
+<blockquote>
+                                <p><%= @post.body%>.</p>
+                            </blockquote>
+
+
+</div>
+</div>
+    <%= render @post.comments %>    
+<div class="clearfix"></div>
+<hr>
+
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Add comment
+                        </div>
+                        <div class="panel-body">
+                            <div class="comments">
+                            <button type="button" class="btn btn-outline btn-primary btn-xs"><%= @post.comments.count %> Comments</button>
+
+
+<h3>Add a comments</h3>
+<%= render "comments/form" %>
+</div>
+                        </div>
+                        
+                    </div>
+        

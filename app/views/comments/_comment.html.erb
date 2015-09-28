@@ -1,0 +1,20 @@
+<div class="commit_area">
+<div class="comment">
+<h3>
+	<%= comment.name %>
+</h3>
+<br>
+<p>
+	<%= comment.body %>
+</p>
+<p>
+	<%= time_ago_in_words(comment.created_at) %> Ago
+</p>
+<p><%= link_to 'Delete', [comment.post, comment],
+				method: :delete,
+				class: "btn",
+				data: {confirm: 'Are you sure?'} %>
+</p> 
+</div>
+
+</div>
