@@ -427,13 +427,15 @@ textarea{
     color:#FFFFFF;
 }
 
-.bg-1{background-image:url("<%= image_tag 'pictures/1.jpg' %>");}
-.bg-2{background-image:url("<%= image_tag 'pictures/2.jpg' %>");}
-.bg-3{background-image:url("<%= image_tag 'pictures/3.jpg' %>");}
-.bg-4{background-image:url("<%= image_tag 'pictures/4.jpg' %>");}
-.bg-5{background-image:url("<%= image_tag 'pictures/5.jpg' %>");}
-.bg-6{background-image:url("<%= image_tag 'pictures/6.jpg' %>");}
-.bg-7{background-image:url("<%= image_tag 'pictures/7.jpg' %>");}
+.bg-1 {
+    background-image: url(<%=  asset_path 'pictures/1.jpg' %>);
+}
+.bg-2{background-image:url(<%= asset_path 'pictures/2.jpg' %>);}
+.bg-3{background-image:url(<%= asset_path 'pictures/3.jpg' %>);}
+.bg-4{background-image:url(<%= asset_path 'pictures/4.jpg' %>);}
+.bg-5{background-image:url(<%= asset_path 'pictures/5.jpg' %>);}
+.bg-6{background-image:url(<%= asset_path 'pictures/6.jpg' %>);}
+.bg-7{background-image:url(<%= asset_path 'pictures/7.jpg' %>);}
 .cover-screen{background-size:cover; background-position: center center;}
 
 .facebook-color{    background-color:#3b5998;    color:#FFFFFF;}
