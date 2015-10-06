@@ -1,6 +1,7 @@
 class AddImageToPost < ActiveRecord::Migration
   def change
-    add_column :posts, :image, :remote_image_url,  :string 
+    add_column :posts, :image, :string 
+    add_column :posts, :remote_image_url,  :string 
     belongs_to :posts
 	  # mount_uploader :image, ImageUploader
    #  # mount_uploader :image, Imageuploader
