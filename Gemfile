@@ -14,9 +14,6 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-
-
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -31,9 +28,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+  gem 'devise'
 
+  gem "mini_magick"
 # Use Capistrano for deployment
+  gem "paperclip", "~> 4.3"
 # gem 'capistrano-rails', group: :development
+  gem "carrierwave"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,12 +46,5 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   
-  gem 'devise'
-
-  gem "mini_magick"
-
-  gem "paperclip", "~> 4.3"
-
-  gem "carrierwave"
 end
 

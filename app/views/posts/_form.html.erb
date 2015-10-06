@@ -1,16 +1,16 @@
 <%= form_for @post, html: { multipart: true } do |f| %>
 <div class="form-group">
   <%= f.label :title %>:
-  <%= f.text_field :title, :class => 'form-control' %>
+  <%= f.text_field :title, required: true, :class => 'form-control' %>
  </div>
  <div class="form-group">
-  <%= f.label :image %>:
-  <%= f.file_field :image, :class => 'form-control' %>
+  <%= f.label value="Upload Image" %>:
+  <%= f.file_field :image, required: true, :class => 'form-control' %>
  </div>
 <div class="form-group">
   <%= f.label :body %>:
-  <%= f.text_area :body, :class => 'form-control'  %><br />
+  <%= f.text_area :body, required: true, :class => 'form-control'  %><br />
 </div>
-  <%= f.submit :class => 'btn btn-success' %>
+  <%= f.submit :class => 'btn btn-lg btn-success btn-block' %>
 <% end %>
 
