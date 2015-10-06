@@ -219,7 +219,7 @@ body{
     border-right:dashed 1px rgba(0,0,0,0.1);
 }
 
-.sidebar-header-left a i{width:54px height:60px; line-height:60px; text-align:center;}
+.sidebar-header-left a i{width:54px; height:60px; line-height:60px; text-align:center;}
 
 
 /*Sidebar Header Right*/
@@ -253,7 +253,7 @@ body{
     border-right:dashed 1px rgba(0,0,0,0.1);
 }
 
-.sidebar-header-left a i{width:54px height:60px; line-height:60px; text-align:center;}
+.sidebar-header-left a i{width:54px; height:60px; line-height:60px; text-align:center;}
 
 /*Sidebar Menu*/
 
