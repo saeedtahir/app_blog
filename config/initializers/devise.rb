@@ -1,29 +1,27 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
-require 'devise'
-
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'a6c466aaf73b48a82f2d8d13fcd21a3c5acd57c3dd36c97b5b6b2dac498a1f6f5cc61f146ab4dec942eec9f76b4cfa43b21071b41efdf0c9dc3fe21b0a20d3b0'
+  # config.secret_key = 'bfc3b21e79cecf18b9b5c4b06e8c4e9b7586d102cf46a1e22aae1350c940d0a2ae6e8438043006020f409267eeef893b536003224ebcb2c70c40d8a2eb1e192c'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-saeed.tahir48@gmail.com'
+  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
-  require 'devise/orm/active_record'
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
+  require 'devise/orm/active_record'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -101,7 +99,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '135f7eac999f3ff5b054a63ab4313b32d89f0baa92b6c96c367bb3c4fc93fdd75d7636802081bc960a5b38b87db048d7d0e32edbbb05e49e98340308273b9da2'
+  # config.pepper = '6e40ac57d5d5462fc5f6971f38c2f4649aefc4637a0cb3af69205e0bee3b544a7b8611c656783f9ac05880228010e4c8b320519e61ffa528f57524f7fadea968'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
