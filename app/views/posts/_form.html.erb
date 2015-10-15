@@ -11,6 +11,10 @@
   <%= f.label :body %>:
   <%= f.text_area :body, :class => 'form-control'  %><br />
 </div>
+<div class="form-group">
+  <%= f.label :category %>:
+  <%= f.select :category, options_for_posts_cat, :class => 'form-control'  %><br />
+</div>
   <%= f.submit :class => 'btn btn-success' %>
 <% end %>
 

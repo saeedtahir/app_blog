@@ -29,11 +29,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-
-
-
-
-
+        <li><%= select_tag "category",  options_for_select(options_for_posts_cat), :class => 'form-control change_category'  %></li>
         <li><%= link_to "New Post", new_post_path %></li>
         <li><%= link_to "Blog", root_path %></a></li>
         <li class="dropdown">
@@ -59,6 +55,12 @@
 	
 	<!--main_area start-->
 		<div class="">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %> alert-dismissable fade in">
+        <%= value %>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        </div>
+      <% end %>
 		 <%= yield %>
 		</div>
 	<!--main_area end-->

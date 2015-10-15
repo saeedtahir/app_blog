@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
-	
+
 	def index
 		@post = Post.all.order('created_at DESC')
 	end
@@ -12,12 +12,22 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.create(post_params)
 		if @post.save
-
-			redirect_to @post, notice: "signed up successfully."
+			flash[:success] = "created successfully"
+			redirect_to @post
 			else
 			render :new
 		end
 		
+	end
+
+	def get_by_category
+		puts params.to_yaml
+		if params[:cat_val] == ""
+			@post = Post.all.order('created_at DESC')
+		else
+			@post = Post.where(category: params[:cat_val]).order('created_at DESC')
+		end	
+		render partial: "posts"
 	end
 
 	def show
@@ -30,7 +40,8 @@ class PostsController < ApplicationController
 
 	def update
 		@post = Post.find(params[:id])
-		if @post.update(params[:post].permit(:title, :body, :image))
+		if @post.update(post_params)
+			flash[:success] = "updated successfully"
 			redirect_to @post
 		else
 			render 'edit'
@@ -46,6 +57,6 @@ class PostsController < ApplicationController
 
 	private
 		def post_params
-			params.require(:post).permit(:title, :body, :image)
+			params.require(:post).permit(:title, :body, :image, :category)
 		end
 end 
